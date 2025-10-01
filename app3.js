@@ -1,6 +1,6 @@
 
 const API_KEY = "AIzaSyBz9IoqaSmkEdYRQeGIvY3UQwtUbM8mGWs"; 
-const MODEL = "gemini-1.5"; 
+const MODEL = "gemini-2.5-flash"; 
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
 
 
