@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" /> 
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+    body {
+        background-image: url(img/Searchpage\ Background.jpg);
+        background-size: cover;        
+        background-position: center;   
+        background-repeat: no-repeat;  
+        background-attachment: fixed;   
+        min-height: 100vh;              
+        
+    }
+
+     form {
+      background-color: #09642f;
+      padding: 20px;
+      margin-top: 50px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      min-width: 280px;
+      height: auto;
+    }
+
+
+    textarea {
+      flex-grow: 1;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 70px;
+      font-size: 14px;
+      width: 100%;
+      min-height: 40px;
+    }
+
+    button:hover {
+      background-color: #dbeafe;
+    }
+
+    @media (max-width: 480px) {
+      form {
+        padding: 15px;
+        max-width: 95%;
+      }
+      textarea {
+        font-size: 13px;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      form {
+        max-width: 90%;
+      }
+    }
+
+    @media (min-width: 769px) {
+      form {
+        max-width: 600px;
+      }
+    }
+
+</style>
+</head>
+<body>
+    
+  <nav class="bg-white border-gray-200"  data-aos="zoom-in">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <span class="self-center text-2xl font-semibold whitespace-nowrap text-black" style="font-size: 25px; font-weight: 600; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">I'm Your Virtual Doctor</span>
+    </a>
+    <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-cta" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+      </svg>
+    </button>
+
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+        <li>
+          <a href="index.html" class="block py-2 px-3 md:p-0 text-black rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<center>
+  <div  data-aos="zoom-in">
+<form id="symptomForm">
+    <label for="chat" class=" sr-only"  >Input symptoms</label>
+    <div class=" form-input flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700 "  >
+        
+        <textarea id="checksymptoms" rows="1" class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  placeholder="Input Your symptoms..."></textarea>
+            <button  type="submit" class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-green-500 dark:hover:bg-green-600" onclick="ShowResult(event)">
+            <svg class="w-5 h-5 rotate-90 rtl:-rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                <path d="m17.914 18.594-8-18a1 1 0 0 0-1.828 0l-8 18a1 1 0 0 0 1.157 1.376L8 18.281V9a1 1 0 0 1 2 0v9.281l6.758 1.689a1 1 0 0 0 1.156-1.376Z"/>
+            </svg>
+            <span class="sr-only">Send message</span>
+        </button>
+        </div>
+    
+</form>
+
+ <div id="output" class="output" style="display:none; margin-top:20px; padding:10px; margin-left: 10px; margin-right: 10px; background:#f3f3f3; border-radius:8px; max-width:600px;"></div></div>
+</center>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="app3.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
